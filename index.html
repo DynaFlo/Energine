@@ -300,10 +300,7 @@
                         <!-- Map placeholder - replace with actual map embed -->
                         <gmp-map center="43.66608783579965, 4.181706990419492" zoom="4" map-id="DEMO_MAP_ID" style="height: 400px">
                             
-      <gmp-advanced-marker
-        position="43.66608783579965, 4.181706990419492"
-        title="Seattle, WA"
-      ></gmp-advanced-marker>
+      <gmp-advanced-marker position="43.66608783579965, 4.181706990419492" title="Seattle, WA"></gmp-advanced-marker>
     </gmp-map>
                         <!--<div class="w-full h-full flex items-center justify-center text-gray-500">
                             <i data-feather="map" class="w-16 h-16"></i>
@@ -362,5 +359,8 @@
     </script>
     <script>AOS.init();</script>
     <script>feather.replace();</script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=maps,marker&v=beta"
+      defer></script>
 </body>
 </html>

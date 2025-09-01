@@ -3,634 +3,337 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Énergine - Énergéticienne Régine Bunel</title>
+    <title>Énergine - Régine Bunel | Énergéticienne</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+        }
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
         .hero-gradient {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, rgba(180,224,198,0.9) 0%, rgba(148,187,233,0.9) 100%);
         }
         .treatment-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        .form-section {
-            background: linear-gradient(to right, #f8f9fa, #e9ecef);
-        }
     </style>
 </head>
-<body class="font-sans antialiased text-gray-800">
+<body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <i data-feather="sun" class="text-yellow-500"></i>
-                        <span class="ml-2 text-xl font-semibold text-gray-900">Énergine</span>
-                    </div>
+                    <span class="text-xl title-font text-green-700">Énergine</span>
                 </div>
-                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
-                    <a href="#about" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Présentation</a>
-                    <a href="#treatments" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Soins</a>
-                    <a href="#contact" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Contact</a>
-                    <a href="#appointment" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Prendre RDV</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-green-600 transition">À propos</a>
+                    <a href="#services" class="text-gray-700 hover:text-green-600 transition">Soins</a>
+                    <a href="#contact" class="text-gray-700 hover:text-green-600 transition">Contact</a>
+                    <a href="#rdv" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition">Prendre RDV</a>
                 </div>
-                <div class="-mr-2 flex items-center md:hidden">
-                    <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                <div class="md:hidden flex items-center">
+                    <button id="menuBtn" class="text-gray-700">
                         <i data-feather="menu"></i>
                     </button>
                 </div>
             </div>
         </div>
-
         <!-- Mobile menu -->
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="pt-2 pb-3 space-y-1">
-                <a href="#about" class="bg-yellow-50 border-yellow-500 text-yellow-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Présentation</a>
-                <a href="#treatments" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Soins</a>
-                <a href="#contact" class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Contact</a>
-                <a href="#appointment" class="bg-yellow-500 hover:bg-yellow-600 text-white block px-4 py-2 rounded-md text-base font-medium mx-3 my-2 transition duration-300">Prendre RDV</a>
-            </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white pb-4 px-4">
+            <a href="#about" class="block py-2 text-gray-700 hover:text-green-600">À propos</a>
+            <a href="#services" class="block py-2 text-gray-700 hover:text-green-600">Soins</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-green-600">Contact</a>
+            <a href="#rdv" class="block mt-2 bg-green-600 text-white px-4 py-2 rounded-md text-center hover:bg-green-700">Prendre RDV</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <div class="hero-gradient">
-        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                    <span class="block">Énergine</span>
-                    <span class="block text-yellow-500">Régine Bunel</span>
-                </h1>
-                <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                    Énergéticienne passionnée, je vous accompagne vers un mieux-être global grâce à des soins énergétiques personnalisés.
-                </p>
-                <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
-                    <div class="rounded-md shadow">
-                        <a href="#appointment" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-600 md:py-4 md:text-lg md:px-10 transition duration-300">
-                            Prendre rendez-vous
-                        </a>
-                    </div>
-                    <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-                        <a href="#treatments" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-yellow-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 transition duration-300">
-                            Découvrir les soins
-                        </a>
+    <section class="hero-gradient py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold title-font text-gray-800 mb-4">Régine Bunel</h1>
+                    <h2 class="text-2xl md:text-3xl title-font text-green-800 mb-6">Énergéticienne - Cabinet Énergine</h2>
+                    <p class="text-gray-700 mb-8 text-lg">Rééquilibrage énergétique pour retrouver harmonie et bien-être.</p>
+                    <a href="#rdv" class="bg-green-700 text-white px-6 py-3 rounded-md hover:bg-green-800 transition inline-block">Prendre rendez-vous</a>
+                </div>
+                <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+                    <div class="bg-white p-2 rounded-full shadow-xl">
+                        <div class="bg-gray-200 w-64 h-64 md:w-80 md:h-80 rounded-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1573497491765-dccce02b29df?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- About Section -->
-    <div id="about" class="py-12 bg-white">
+    <section id="about" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center">
-                <h2 class="text-base text-yellow-500 font-semibold tracking-wide uppercase">Présentation</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    Régine Bunel, énergéticienne
-                </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                    Mon approche holistique pour votre bien-être
-                </p>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl title-font text-gray-800 mb-4" data-aos="fade-up">À propos de moi</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto mb-8"></div>
             </div>
-
-            <div class="mt-10">
-                <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-                    <div class="relative">
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-yellow-500 text-white">
-                            <i data-feather="heart"></i>
-                        </div>
-                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Mon parcours</p>
-                        <p class="mt-2 ml-16 text-base text-gray-500">
-                            Formée aux différentes techniques énergétiques depuis plus de 10 ans, j'ai à cœur d'accompagner chacun vers un mieux-être global.
-                        </p>
-                    </div>
-
-                    <div class="relative">
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-yellow-500 text-white">
-                            <i data-feather="target"></i>
-                        </div>
-                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Ma philosophie</p>
-                        <p class="mt-2 ml-16 text-base text-gray-500">
-                            Je considère chaque personne dans sa globalité, en prenant en compte ses dimensions physique, émotionnelle, mentale et spirituelle.
-                        </p>
-                    </div>
-
-                    <div class="relative">
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-yellow-500 text-white">
-                            <i data-feather="home"></i>
-                        </div>
-                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Mon cabinet</p>
-                        <p class="mt-2 ml-16 text-base text-gray-500">
-                            Un espace chaleureux et apaisant où vous pourrez vous ressourcer en toute sérénité, loin du stress quotidien.
-                        </p>
-                    </div>
-
-                    <div class="relative">
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-yellow-500 text-white">
-                            <i data-feather="users"></i>
-                        </div>
-                        <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Mon engagement</p>
-                        <p class="mt-2 ml-16 text-base text-gray-500">
-                            Vous accompagner avec bienveillance et professionnalisme dans votre démarche de mieux-être et d'épanouissement personnel.
-                        </p>
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10" data-aos="fade-right">
+                    <p class="text-gray-700 mb-6">Je m'appelle Régine Bunel et je suis énergéticienne depuis plus de 10 ans. Ma passion pour le bien-être et l'équilibre énergétique m'a conduite à me former auprès de maîtres reconnus dans différentes techniques de soins énergétiques.</p>
+                    <p class="text-gray-700 mb-6">Mon approche est holistique : je considère la personne dans sa globalité, corps et esprit, pour identifier et libérer les blocages énergétiques à l'origine des déséquilibres.</p>
+                    <p class="text-gray-700">Au cabinet Énergine, je vous accueille dans un cadre chaleureux et bienveillant pour vous accompagner vers un meilleur équilibre et un bien-être durable.</p>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl title-font text-green-700 mb-4">Ma philosophie</h3>
+                        <p class="text-gray-700 mb-4"><i data-feather="check-circle" class="text-green-600 inline mr-2"></i> Chaque être est unique et mérite une approche personnalisée</p>
+                        <p class="text-gray-700 mb-4"><i data-feather="check-circle" class="text-green-600 inline mr-2"></i> Le corps possède une sagesse innée et une capacité d'auto-guérison</p>
+                        <p class="text-gray-700 mb-4"><i data-feather="check-circle" class="text-green-600 inline mr-2"></i> L'énergie est à la base de toute vie et de tout équilibre</p>
+                        <p class="text-gray-700"><i data-feather="check-circle" class="text-green-600 inline mr-2"></i> Le bien-être est un état naturel que nous pouvons retrouver</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Treatments Section -->
-    <div id="treatments" class="py-12 bg-gray-50">
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center">
-                <h2 class="text-base text-yellow-500 font-semibold tracking-wide uppercase">Soins énergétiques</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    Les soins proposés
-                </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                    Découvrez les différentes techniques que je pratique
-                </p>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl title-font text-gray-800 mb-4" data-aos="fade-up">Les soins proposés</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto mb-8"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-aos="fade-up">Découvrez les différentes techniques que je propose pour rééquilibrer votre énergie et retrouver bien-être et harmonie.</p>
             </div>
-
-            <div class="mt-10 grid gap-8 lg:grid-cols-3">
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Treatment 1 -->
-                <div class="treatment-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+                <div class="treatment-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
                     <div class="p-6">
-                        <div class="flex items-center">
-                            <div class="flex-shrink-0 bg-yellow-100 rounded-md p-3">
-                                <i data-feather="wind" class="h-6 w-6 text-yellow-500"></i>
-                            </div>
-                            <div class="ml-5">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">Reiki Usui</h3>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-base text-gray-500">
-                                Technique japonaise de relaxation et de réduction du stress par imposition des mains. Le Reiki harmonise les énergies et favorise le processus naturel de guérison.
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
-                                60-90 min
-                            </span>
-                        </div>
+                        <h3 class="text-xl title-font text-green-700 mb-2">Rééquilibrage énergétique</h3>
+                        <p class="text-gray-600 mb-4">Séance complète pour harmoniser les flux énergétiques du corps et libérer les blocages.</p>
+                        <p class="text-gray-700 font-medium">Durée : 1h30 - 80€</p>
                     </div>
                 </div>
-
+                
                 <!-- Treatment 2 -->
-                <div class="treatment-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+                <div class="treatment-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
                     <div class="p-6">
-                        <div class="flex items-center">
-                            <div class="flex-shrink-0 bg-yellow-100 rounded-md p-3">
-                                <i data-feather="feather" class="h-6 w-6 text-yellow-500"></i>
-                            </div>
-                            <div class="ml-5">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">Magnétisme</h3>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-base text-gray-500">
-                                Transmission d'énergie vitale pour rééquilibrer le corps et l'esprit. Particulièrement efficace pour les douleurs physiques, les troubles du sommeil et les blocages émotionnels.
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
-                                45-60 min
-                            </span>
-                        </div>
+                        <h3 class="text-xl title-font text-green-700 mb-2">Soin des chakras</h3>
+                        <p class="text-gray-600 mb-4">Nettoyage et réharmonisation des 7 centres énergétiques principaux pour un meilleur équilibre.</p>
+                        <p class="text-gray-700 font-medium">Durée : 1h - 60€</p>
                     </div>
                 </div>
-
+                
                 <!-- Treatment 3 -->
-                <div class="treatment-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+                <div class="treatment-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
                     <div class="p-6">
-                        <div class="flex items-center">
-                            <div class="flex-shrink-0 bg-yellow-100 rounded-md p-3">
-                                <i data-feather="layers" class="h-6 w-6 text-yellow-500"></i>
-                            </div>
-                            <div class="ml-5">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">Soins des Chakras</h3>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-base text-gray-500">
-                                Rééquilibrage des centres énergétiques du corps pour restaurer l'harmonie physique et émotionnelle. Identification et libération des blocages dans les chakras.
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
-                                60 min
-                            </span>
-                        </div>
+                        <h3 class="text-xl title-font text-green-700 mb-2">Magnétisme curatif</h3>
+                        <p class="text-gray-600 mb-4">Transmission d'énergie vitale pour soulager les douleurs et accélérer les processus de guérison.</p>
+                        <p class="text-gray-700 font-medium">Durée : 45min - 50€</p>
                     </div>
                 </div>
-
+                
                 <!-- Treatment 4 -->
-                <div class="treatment-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+                <div class="treatment-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
                     <div class="p-6">
-                        <div class="flex items-center">
-                            <div class="flex-shrink-0 bg-yellow-100 rounded-md p-3">
-                                <i data-feather="eye" class="h-6 w-6 text-yellow-500"></i>
-                            </div>
-                            <div class="ml-5">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">Harmonisation Globale</h3>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-base text-gray-500">
-                                Soin complet combinant différentes techniques énergétiques pour un rééquilibrage en profondeur de tout votre être. Idéal pour une remise en énergie globale.
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
-                                90 min
-                            </span>
-                        </div>
+                        <h3 class="text-xl title-font text-green-700 mb-2">Harmonisation maison</h3>
+                        <p class="text-gray-600 mb-4">Purification et rééquilibrage énergétique de votre lieu de vie ou de travail.</p>
+                        <p class="text-gray-700 font-medium">Durée : 2h - 120€</p>
                     </div>
                 </div>
-
+                
                 <!-- Treatment 5 -->
-                <div class="treatment-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+                <div class="treatment-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
                     <div class="p-6">
-                        <div class="flex items-center">
-                            <div class="flex-shrink-0 bg-yellow-100 rounded-md p-3">
-                                <i data-feather="moon" class="h-6 w-6 text-yellow-500"></i>
-                            </div>
-                            <div class="ml-5">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">Libération Emotionnelle</h3>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-base text-gray-500">
-                                Technique spécifique pour identifier et libérer les émotions bloquées responsables de mal-être ou de schémas répétitifs. Libération des mémoires cellulaires.
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
-                                60-75 min
-                            </span>
-                        </div>
+                        <h3 class="text-xl title-font text-green-700 mb-2">Libération émotionnelle</h3>
+                        <p class="text-gray-600 mb-4">Technique pour libérer les émotions bloquées et les schémas répétitifs.</p>
+                        <p class="text-gray-700 font-medium">Durée : 1h15 - 70€</p>
                     </div>
                 </div>
-
+                
                 <!-- Treatment 6 -->
-                <div class="treatment-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 ease-in-out">
+                <div class="treatment-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1510894347715-a36a21adb9b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
                     <div class="p-6">
-                        <div class="flex items-center">
-                            <div class="flex-shrink-0 bg-yellow-100 rounded-md p-3">
-                                <i data-feather="zap" class="h-6 w-6 text-yellow-500"></i>
-                            </div>
-                            <div class="ml-5">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900">Soin à Distance</h3>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <p class="text-base text-gray-500">
-                                Séance énergétique réalisée à distance, aussi efficace qu'en présentiel. Idéal si vous ne pouvez pas vous déplacer ou si vous habitez loin.
-                            </p>
-                        </div>
-                        <div class="mt-4">
-                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
-                                45-60 min
-                            </span>
-                        </div>
+                        <h3 class="text-xl title-font text-green-700 mb-2">Soin à distance</h3>
+                        <p class="text-gray-600 mb-4">Travail énergétique effectué à distance, idéal pour les personnes ne pouvant se déplacer.</p>
+                        <p class="text-gray-700 font-medium">Durée : 1h - 60€</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Appointment Section -->
-    <div id="appointment" class="form-section py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center">
-                <h2 class="text-base text-yellow-500 font-semibold tracking-wide uppercase">Prendre rendez-vous</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    Réservez votre séance
-                </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                    Complétez ce formulaire et je vous recontacterai rapidement pour confirmer votre rendez-vous.
-                </p>
+    <section id="rdv" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl title-font text-gray-800 mb-4" data-aos="fade-up">Prendre rendez-vous</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto mb-8"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-aos="fade-up">Remplissez le formulaire ci-dessous pour réserver votre séance. Je vous recontacterai rapidement pour confirmer votre rendez-vous.</p>
             </div>
-
-            <div class="mt-10 sm:mt-12">
-                <form class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6 sm:p-8">
-                    <div class="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">
-                        <div>
-                            <label for="first-name" class="block text-sm font-medium text-gray-700">Prénom</label>
-                            <div class="mt-1">
-                                <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="py-3 px-4 block w-full shadow-sm focus:ring-yellow-500 focus:border-yellow-500 border-gray-300 rounded-md">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="last-name" class="block text-sm font-medium text-gray-700">Nom</label>
-                            <div class="mt-1">
-                                <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="py-3 px-4 block w-full shadow-sm focus:ring-yellow-500 focus:border-yellow-500 border-gray-300 rounded-md">
-                            </div>
-                        </div>
-
-                        <div class="sm:col-span-2">
-                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                            <div class="mt-1">
-                                <input id="email" name="email" type="email" autocomplete="email" class="py-3 px-4 block w-full shadow-sm focus:ring-yellow-500 focus:border-yellow-500 border-gray-300 rounded-md">
-                            </div>
-                        </div>
-
-                        <div class="sm:col-span-2">
-                            <label for="phone" class="block text-sm font-medium text-gray-700">Téléphone</label>
-                            <div class="mt-1">
-                                <input type="text" name="phone" id="phone" autocomplete="tel" class="py-3 px-4 block w-full shadow-sm focus:ring-yellow-500 focus:border-yellow-500 border-gray-300 rounded-md">
-                            </div>
-                        </div>
-
-                        <div class="sm:col-span-2">
-                            <label for="treatment" class="block text-sm font-medium text-gray-700">Soin souhaité</label>
-                            <div class="mt-1">
-                                <select id="treatment" name="treatment" class="py-3 px-4 block w-full shadow-sm focus:ring-yellow-500 focus:border-yellow-500 border-gray-300 rounded-md">
-                                    <option value="">-- Sélectionnez un soin --</option>
-                                    <option value="Reiki Usui">Reiki Usui</option>
-                                    <option value="Magnétisme">Magnétisme</option>
-                                    <option value="Soins des Chakras">Soins des Chakras</option>
-                                    <option value="Harmonisation Globale">Harmonisation Globale</option>
-                                    <option value="Libération Emotionnelle">Libération Emotionnelle</option>
-                                    <option value="Soin à Distance">Soin à Distance</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="sm:col-span-2">
-                            <label for="preferred-date" class="block text-sm font-medium text-gray-700">Date souhaitée</label>
-                            <div class="mt-1">
-                                <input type="date" name="preferred-date" id="preferred-date" class="py-3 px-4 block w-full shadow-sm focus:ring-yellow-500 focus:border-yellow-500 border-gray-300 rounded-md">
-                            </div>
-                        </div>
-
-                        <div class="sm:col-span-2">
-                            <label for="message" class="block text-sm font-medium text-gray-700">Message (facultatif)</label>
-                            <div class="mt-1">
-                                <textarea id="message" name="message" rows="4" class="py-3 px-4 block w-full shadow-sm focus:ring-yellow-500 focus:border-yellow-500 border-gray-300 rounded-md"></textarea>
-                            </div>
-                        </div>
+            
+            <form class="bg-gray-50 p-8 rounded-lg shadow-md" data-aos="fade-up">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 mb-2">Nom complet</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
                     </div>
-
-                    <div class="mt-8 flex justify-end">
-                        <button type="submit" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-yellow-500 hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition duration-300">
-                            Envoyer la demande
-                            <i data-feather="send" class="ml-2 -mr-1 w-5 h-5"></i>
-                        </button>
+                    <div>
+                        <label for="email" class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
                     </div>
-                </form>
-            </div>
+                    <div>
+                        <label for="phone" class="block text-gray-700 mb-2">Téléphone</label>
+                        <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div>
+                        <label for="treatment" class="block text-gray-700 mb-2">Soin souhaité</label>
+                        <select id="treatment" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <option value="">Sélectionnez un soin</option>
+                            <option value="Rééquilibrage énergétique">Rééquilibrage énergétique</option>
+                            <option value="Soin des chakras">Soin des chakras</option>
+                            <option value="Magnétisme curatif">Magnétisme curatif</option>
+                            <option value="Harmonisation maison">Harmonisation maison</option>
+                            <option value="Libération émotionnelle">Libération émotionnelle</option>
+                            <option value="Soin à distance">Soin à distance</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="date" class="block text-gray-700 mb-2">Date souhaitée</label>
+                        <input type="date" id="date" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                    <div>
+                        <label for="time" class="block text-gray-700 mb-2">Heure souhaitée</label>
+                        <input type="time" id="time" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <label for="message" class="block text-gray-700 mb-2">Message (facultatif)</label>
+                    <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                </div>
+                <div class="mt-8">
+                    <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition">Envoyer la demande</button>
+                </div>
+            </form>
         </div>
-    </div>
+    </section>
 
     <!-- Contact Section -->
-    <div id="contact" class="py-12 bg-white">
+    <section id="contact" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center">
-                <h2 class="text-base text-yellow-500 font-semibold tracking-wide uppercase">Contact</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    Me contacter
-                </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                    Pour toute question ou information complémentaire
-                </p>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl title-font text-gray-800 mb-4" data-aos="fade-up">Contact</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto mb-8"></div>
             </div>
-
-            <div class="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-3">
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <div class="flex items-center">
-                        <div class="flex-shrink-0 bg-yellow-100 rounded-md p-3">
-                            <i data-feather="map-pin" class="h-6 w-6 text-yellow-500"></i>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h3 class="text-xl title-font text-green-700 mb-6">Informations pratiques</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i data-feather="map-pin" class="text-green-600 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Adresse</h4>
+                                <p class="text-gray-600">123 Rue de l'Énergie<br>75000 Paris</p>
+                            </div>
                         </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-medium text-gray-900">Adresse</h3>
-                            <p class="mt-1 text-base text-gray-500">
-                                123 Rue de l'Énergie<br>
-                                75000 Paris
-                            </p>
+                        <div class="flex items-start">
+                            <i data-feather="phone" class="text-green-600 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Téléphone</h4>
+                                <p class="text-gray-600">01 23 45 67 89</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <div class="flex items-center">
-                        <div class="flex-shrink-0 bg-yellow-100 rounded-md p-3">
-                            <i data-feather="phone" class="h-6 w-6 text-yellow-500"></i>
+                        <div class="flex items-start">
+                            <i data-feather="mail" class="text-green-600 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Email</h4>
+                                <p class="text-gray-600">contact@energine.fr</p>
+                            </div>
                         </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-medium text-gray-900">Téléphone</h3>
-                            <p class="mt-1 text-base text-gray-500">
-                                +33 6 12 34 56 78
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <div class="flex items-center">
-                        <div class="flex-shrink-0 bg-yellow-100 rounded-md p-3">
-                            <i data-feather="mail" class="h-6 w-6 text-yellow-500"></i>
-                        </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-medium text-gray-900">Email</h3>
-                            <p class="mt-1 text-base text-gray-500">
-                                contact@energine.fr
-                            </p>
+                        <div class="flex items-start">
+                            <i data-feather="clock" class="text-green-600 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Horaires</h4>
+                                <p class="text-gray-600">Lundi - Vendredi : 9h - 19h<br>Samedi : 9h - 13h</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="mt-10">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <div class="p-6 sm:p-8">
-                        <h3 class="text-lg font-medium text-gray-900">Horaires d'ouverture</h3>
-                        <div class="mt-4">
-                            <ul class="divide-y divide-gray-200">
-                                <li class="py-4 flex">
-                                    <span class="flex-1 text-gray-500">Lundi</span>
-                                    <span class="text-gray-900">9h - 18h</span>
-                                </li>
-                                <li class="py-4 flex">
-                                    <span class="flex-1 text-gray-500">Mardi</span>
-                                    <span class="text-gray-900">9h - 18h</span>
-                                </li>
-                                <li class="py-4 flex">
-                                    <span class="flex-1 text-gray-500">Mercredi</span>
-                                    <span class="text-gray-900">9h - 18h</span>
-                                </li>
-                                <li class="py-4 flex">
-                                    <span class="flex-1 text-gray-500">Jeudi</span>
-                                    <span class="text-gray-900">9h - 18h</span>
-                                </li>
-                                <li class="py-4 flex">
-                                    <span class="flex-1 text-gray-500">Vendredi</span>
-                                    <span class="text-gray-900">9h - 18h</span>
-                                </li>
-                                <li class="py-4 flex">
-                                    <span class="flex-1 text-gray-500">Samedi</span>
-                                    <span class="text-gray-900">9h - 13h</span>
-                                </li>
-                                <li class="py-4 flex">
-                                    <span class="flex-1 text-gray-500">Dimanche</span>
-                                    <span class="text-gray-900">Fermé</span>
-                                </li>
-                            </ul>
+                
+                <div data-aos="fade-left">
+                    <h3 class="text-xl title-font text-green-700 mb-6">Plan d'accès</h3>
+                    <div class="bg-gray-200 h-64 rounded-lg overflow-hidden">
+                        <!-- Map placeholder - replace with actual map embed -->
+                        <div class="w-full h-full flex items-center justify-center text-gray-500">
+                            <i data-feather="map" class="w-16 h-16"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-                <div class="space-y-8 xl:col-span-1">
-                    <div class="flex items-center">
-                        <i data-feather="sun" class="text-yellow-500"></i>
-                        <span class="ml-2 text-xl font-semibold text-white">Énergine</span>
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl title-font mb-4">Énergine</h3>
+                    <p class="text-gray-300">Cabinet d'énergéticienne de Régine Bunel, pour un rééquilibrage énergétique personnalisé.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Liens utiles</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition">À propos</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition">Soins</a></li>
+                        <li><a href="#rdv" class="text-gray-300 hover:text-white transition">Prendre RDV</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-medium mb-4">Réseaux sociaux</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white transition"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white transition"><i data-feather="linkedin"></i></a>
                     </div>
-                    <p class="text-gray-300 text-base">
-                        Énergéticienne passionnée, je vous accompagne vers un mieux-être global grâce à des soins énergétiques personnalisés.
-                    </p>
-                    <div class="flex space-x-6">
-                        <a href="#" class="text-gray-400 hover:text-yellow-500">
-                            <i data-feather="facebook"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-yellow-500">
-                            <i data-feather="instagram"></i>
-                        </a>
+                    <div class="mt-6">
+                        <p class="text-gray-300">© 2023 Énergine - Tous droits réservés</p>
                     </div>
                 </div>
-                <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
-                        <div>
-                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">
-                                Navigation
-                            </h3>
-                            <ul class="mt-4 space-y-4">
-                                <li>
-                                    <a href="#about" class="text-base text-gray-400 hover:text-white">
-                                        Présentation
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#treatments" class="text-base text-gray-400 hover:text-white">
-                                        Soins
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#contact" class="text-base text-gray-400 hover:text-white">
-                                        Contact
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#appointment" class="text-base text-gray-400 hover:text-white">
-                                        Prendre RDV
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mt-12 md:mt-0">
-                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">
-                                Soins
-                            </h3>
-                            <ul class="mt-4 space-y-4">
-                                <li>
-                                    <a href="#" class="text-base text-gray-400 hover:text-white">
-                                        Reiki Usui
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-base text-gray-400 hover:text-white">
-                                        Magnétisme
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-base text-gray-400 hover:text-white">
-                                        Soins des Chakras
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-base text-gray-400 hover:text-white">
-                                        Harmonisation Globale
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
-                        <div>
-                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">
-                                Informations
-                            </h3>
-                            <ul class="mt-4 space-y-4">
-                                <li>
-                                    <a href="#" class="text-base text-gray-400 hover:text-white">
-                                        Mentions légales
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-base text-gray-400 hover:text-white">
-                                        Politique de confidentialité
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-base text-gray-400 hover:text-white">
-                                        Conditions générales
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-12 border-t border-gray-700 pt-8">
-                <p class="text-base text-gray-400 text-center">
-                    &copy; 2023 Énergine - Régine Bunel. Tous droits réservés.
-                </p>
             </div>
         </div>
     </footer>
 
     <script>
         // Mobile menu toggle
-        document.querySelector('nav button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('hidden');
         });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                // Close mobile menu if open
-                const menu = document.getElementById('mobile-menu');
-                if (!menu.classList.contains('hidden')) {
-                    menu.classList.add('hidden');
-                }
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.add('hidden');
             });
         });
-
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
     </script>
+    <script>AOS.init();</script>
     <script>feather.replace();</script>
 </body>
 </html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rééquilibrage énergétique | Énergine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+        }
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(180,224,198,0.9) 0%, rgba(148,187,233,0.9) 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl title-font text-green-700">Énergine</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#about" class="text-gray-700 hover:text-green-600 transition">À propos</a>
+                    <a href="index.html#services" class="text-gray-700 hover:text-green-600 transition">Soins</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-green-600 transition">Contact</a>
+                    <a href="index.html#rdv" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition">Prendre RDV</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menuBtn" class="text-gray-700">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-3xl md:text-4xl font-bold title-font text-gray-800 mb-4">Galerie photos</h1>
+                <div class="w-20 h-1 bg-green-600 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">Une approche globale pour harmoniser vos énergies et retrouver équilibre et bien-être.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <div class="bg-gray-100 p-6 rounded-lg mb-8">
+                        <h3 class="text-xl title-font text-green-700 mb-4">Informations pratiques</h3>
+                        <p class="text-gray-700 mb-2"><span class="font-medium">Durée :</span> 1h30</p>
+                        <p class="text-gray-700 mb-2"><span class="font-medium">Tarif :</span> 80€</p>
+                        <p class="text-gray-700"><span class="font-medium">Fréquence :</span> Selon vos besoins</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Rééquilibrage énergétique" class="w-full rounded-lg shadow-md">
+                </div>
+                <div data-aos="fade-right">
+                    <div class="bg-gray-100 p-6 rounded-lg mb-8">
+                        <h3 class="text-xl title-font text-green-700 mb-4">Informations pratiques</h3>
+                        <p class="text-gray-700 mb-2"><span class="font-medium">Durée :</span> 1h30</p>
+                        <p class="text-gray-700 mb-2"><span class="font-medium">Tarif :</span> 80€</p>
+                        <p class="text-gray-700"><span class="font-medium">Fréquence :</span> Selon vos besoins</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Rééquilibrage énergétique" class="w-full rounded-lg shadow-md">
+                </div>
+                <div data-aos="fade-right">
+                    <div class="bg-gray-100 p-6 rounded-lg mb-8">
+                        <h3 class="text-xl title-font text-green-700 mb-4">Informations pratiques</h3>
+                        <p class="text-gray-700 mb-2"><span class="font-medium">Durée :</span> 1h30</p>
+                        <p class="text-gray-700 mb-2"><span class="font-medium">Tarif :</span> 80€</p>
+                        <p class="text-gray-700"><span class="font-medium">Fréquence :</span> Selon vos besoins</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Rééquilibrage énergétique" class="w-full rounded-lg shadow-md">
+                </div>
+                <div data-aos="fade-right">
+                    <div class="bg-gray-100 p-6 rounded-lg mb-8">
+                        <h3 class="text-xl title-font text-green-700 mb-4">Informations pratiques</h3>
+                        <p class="text-gray-700 mb-2"><span class="font-medium">Durée :</span> 1h30</p>
+                        <p class="text-gray-700 mb-2"><span class="font-medium">Tarif :</span> 80€</p>
+                        <p class="text-gray-700"><span class="font-medium">Fréquence :</span> Selon vos besoins</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Rééquilibrage énergétique" class="w-full rounded-lg shadow-md">
+                </div>
+                <div data-aos="fade-right">
+                    <div class="bg-gray-100 p-6 rounded-lg mb-8">
+                        <h3 class="text-xl title-font text-green-700 mb-4">Informations pratiques</h3>
+                        <p class="text-gray-700 mb-2"><span class="font-medium">Durée :</span> 1h30</p>
+                        <p class="text-gray-700 mb-2"><span class="font-medium">Tarif :</span> 80€</p>
+                        <p class="text-gray-700"><span class="font-medium">Fréquence :</span> Selon vos besoins</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Rééquilibrage énergétique" class="w-full rounded-lg shadow-md">
+                </div>
+                <div data-aos="fade-right">
+                    <div class="bg-gray-100 p-6 rounded-lg mb-8">
+                        <h3 class="text-xl title-font text-green-700 mb-4">Informations pratiques</h3>
+                        <p class="text-gray-700 mb-2"><span class="font-medium">Durée :</span> 1h30</p>
+                        <p class="text-gray-700 mb-2"><span class="font-medium">Tarif :</span> 80€</p>
+                        <p class="text-gray-700"><span class="font-medium">Fréquence :</span> Selon vos besoins</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Rééquilibrage énergétique" class="w-full rounded-lg shadow-md">
+                </div>
+                <div data-aos="fade-left">
+                    <h2 class="text-2xl title-font text-gray-800 mb-6">Description du soin</h2>
+                    <p class="text-gray-700 mb-6">Le rééquilibrage énergétique est une technique holistique qui vise à harmoniser les flux d'énergie dans votre corps. Cette séance complète permet d'identifier et de libérer les blocages énergétiques à l'origine de déséquilibres physiques, émotionnels ou mentaux.</p>
+                    
+                    <h3 class="text-xl title-font text-green-700 mb-4 mt-8">Déroulement d'une séance</h3>
+                    <ol class="list-decimal list-inside space-y-3 text-gray-700">
+                        <li><span class="font-medium">Échange préalable</span> pour comprendre vos besoins et vos attentes</li>
+                        <li><span class="font-medium">Diagnostic énergétique</span> pour identifier les déséquilibres</li>
+                        <li><span class="font-medium">Travail énergétique</span> par imposition des mains et techniques spécifiques</li>
+                        <li><span class="font-medium">Harmonisation globale</span> des différents corps énergétiques</li>
+                        <li><span class="font-medium">Retour d'expérience</span> et conseils personnalisés</li>
+                    </ol>
+
+                    <h3 class="text-xl title-font text-green-700 mb-4 mt-8">Bienfaits</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Libération des blocages énergétiques</li>
+                        <li>Amélioration du bien-être général</li>
+                        <li>Réduction du stress et de l'anxiété</li>
+                        <li>Stimulation des capacités d'auto-guérison</li>
+                        <li>Meilleure circulation de l'énergie vitale</li>
+                        <li>Retrouver un équilibre émotionnel</li>
+                    </ul>
+
+                    <div class="mt-8">
+                        <a href="index.html#rdv" class="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition inline-block">Prendre rendez-vous</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-xl title-font mb-4">Énergine</h3>
+                <p class="text-gray-300 mb-6">Cabinet d'énergéticienne de Régine Bunel</p>
+                <div class="flex justify-center space-x-6">
+                    <a href="#" class="text-gray-300 hover:text-white transition"><i data-feather="facebook"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-white transition"><i data-feather="instagram"></i></a>
+                </div>
+                <p class="text-gray-300 mt-8">© 2023 Énergine - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+    <script>AOS.init();</script>
+    <script>feather.replace();</script>
+</body>
+</html>
